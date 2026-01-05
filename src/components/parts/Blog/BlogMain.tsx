@@ -3,12 +3,7 @@ import type { MediumPost } from "../../../services/types";
 import { fetchMediumPosts } from "../../../services/mediumService";
 import BlogCard from "./BlogCard";
 import SkeletonCard from "./SkeletonCard";
-import {
-  AlertCircle,
-  ArrowRight,
-  ExternalLink,
-  RefreshCcw,
-} from "lucide-react";
+import { AlertCircle, ExternalLink, RefreshCcw } from "lucide-react";
 
 const USER = "larrylambert269";
 
@@ -16,7 +11,7 @@ const App: React.FC = () => {
   const [posts, setPosts] = useState<MediumPost[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [username, setUsername] = useState<string>(USER); // Default user
+  const [username] = useState<string>(USER); // Default user
 
   const loadPosts = async () => {
     setLoading(true);
