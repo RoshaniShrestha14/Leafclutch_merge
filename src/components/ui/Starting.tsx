@@ -9,7 +9,13 @@ const title = "Leafclutch Technologies Pvt. Ltd.";
 
 export default function Starting({ pageName, srcImage }: StartingProps) {
   const heroBackground: React.CSSProperties = {
-    backgroundImage: `linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url(${srcImage})`,
+    backgroundImage: `
+  linear-gradient(
+    rgba(9, 5, 54, 0.55),
+    rgba(5, 4, 46, 0.85)
+  ),
+  url(${srcImage})
+`,
   };
 
   return (
@@ -22,7 +28,7 @@ export default function Starting({ pageName, srcImage }: StartingProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-[#3AE39E] text-4xl md:text-5xl font-bold tracking-wide"
+        className="text-white dark:text-accent text-4xl md:text-5xl font-bold tracking-wide"
       >
         {title}
       </motion.h2>
@@ -32,7 +38,7 @@ export default function Starting({ pageName, srcImage }: StartingProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        className="mt-3 text-[#47C6B6] text-lg md:text-xl uppercase tracking-widest"
+        className="mt-3 text-white dark:text-accent text-lg md:text-xl uppercase tracking-widest"
       >
         {pageName}
       </motion.h2>
