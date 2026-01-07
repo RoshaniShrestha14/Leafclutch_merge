@@ -255,4 +255,21 @@
             background-position: 100% 50%;
         }
     }
+
+    /* for spinning that search border in Verify Certificate page */
+    @keyframes spin-slow {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-spin-slow {
+        animation: spin-slow 12s linear infinite;
+    }
+
+
 }
