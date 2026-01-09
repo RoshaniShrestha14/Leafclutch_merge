@@ -13,6 +13,7 @@ import {
 } from "../ui/dropdown-menu";
 
 const careers = [
+  { name: "Training & Internships", href: "/training/courses" },
   { name: "Jobs", href: "/careers/jobs" },
   { name: "Internships", href: "/careers/internships" },
   { name: "Training & Internship", href: "/careers/internships" },
@@ -23,16 +24,16 @@ const others = [
   { name: "Verify Certificate", href: "/others/verify-certificate" },
   { name: "Our Projects", href: "/others/our-projects" },
 ];
-const services = [
-  { name: "All Services", href: "/services/blog" },
-  { name: "Web Development", href: "/services/verify-certificate" },
-  { name: "Mobile App Development", href: "/services/our-projects" },
-  { name: "DevOps Solutions", href: "/services/our-projects" },
-  { name: "Cybersecurity", href: "/services/our-projects" },
-  { name: "Data Science & AI", href: "/services/our-projects" },
-  { name: "Digital Marketing", href: "/services/our-projects" },
-];
 
+const services = [
+  { name: "All Services", href: "/all-services" },
+  { name: "Web Development", href: "/services/web-development" },
+  { name: "Mobile App Development", href: "/services/mobile-development" },
+  { name: "DevOps Solutions", href: "/services/devops" },
+  { name: "Cybersecurity", href: "/services/cybersecurity" },
+  { name: "Data Science & AI", href: "/services/data-science" },
+  { name: "Digital Marketing", href: "/services/digital-marketing" },
+];
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },

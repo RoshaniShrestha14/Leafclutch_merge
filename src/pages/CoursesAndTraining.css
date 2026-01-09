@@ -1,0 +1,659 @@
+/* dark mode  */
+@media (prefers-color-scheme: dark) {
+  .hero-content {
+    color: #ffffff;
+  }
+
+  .training-benefits-section h2,
+  .structure-title,
+  .why-choose-flat-title,
+  .catalog h2,
+  h2 {
+    color: #4698eb !important;
+  }
+
+  .benefits-subtext,
+  .structure-subtitle,
+  .why-choose-flat-description {
+    color: #cbd5e1 !important;
+  }
+
+  .program-structure-new {
+    background-color: #0f1626 !important;
+  }
+  
+  .why-choose-flat-section {
+    background-color: #0f1626 !important;
+  }
+
+  .catalog-card,
+  .card-catalog,
+  .modal-content {
+    background: #0c1322 !important;
+    border-color: #334155 !important;
+  }
+
+  .catalog-card h3,
+  .card-catalog h3,
+  .modal-content h3,
+  .why-choose-flat-item h3 {
+    color: #f1f5f9 !important;
+  }
+
+  .catalog-card p,
+  .card-catalog p,
+  .modal-content li,
+  .why-choose-flat-item p {
+    color: #cbd5e1 !important;
+  }
+
+  .why-choose-flat-item svg {
+    color: #4698eb !important;
+    stroke: #4698eb !important;
+  }
+
+  .icon {
+    color: #60a5fa !important;
+  }
+
+  .course-list {
+    background: #0c1322 !important;
+    border-color: #334155 !important;
+  }
+
+  .course-list li {
+    color: #e2e8f0 !important;
+  }
+
+  .why-choose-flat-badge {
+    background-color: #0a2536 !important;
+    color: #4698eb !important;
+  }
+
+  .hero h1 {
+    color: #13b7ed !important;
+  }
+
+  .hero-subtext {
+    color: #13b7ed !important;
+  }
+
+  .training-benefits-section {
+    background-color: #080c17;
+  }
+}
+
+/* dark mode for toogle */
+.dark .hero-content {
+  color: #ffffff;
+}
+
+.dark .training-benefits-section h2,
+.dark .structure-title,
+.dark .why-choose-flat-title,
+.dark .catalog h2,
+.dark h2 {
+  color: #4698eb !important;
+}
+
+.dark .benefits-subtext,
+.dark .structure-subtitle,
+.dark .why-choose-flat-description {
+  color: #cbd5e1 !important;
+}
+
+.dark .program-structure-new {
+  background-color: #0f1626 !important;
+}
+
+.dark .why-choose-flat-section {
+  background-color: #0f1626 !important;
+}
+
+.dark .catalog-card,
+.dark .card-catalog,
+.dark .modal-content {
+  background: #0c1322 !important;
+  border-color: #334155 !important;
+}
+
+.dark .catalog-card h3,
+.dark .card-catalog h3,
+.dark .modal-content h3,
+.dark .why-choose-flat-item h3 {
+  color: #f1f5f9 !important;
+}
+
+.dark .catalog-card p,
+.dark .card-catalog p,
+.dark .modal-content li,
+.dark .why-choose-flat-item p {
+  color: #cbd5e1 !important;
+}
+
+.dark .why-choose-flat-item svg {
+  color: #4698eb !important;
+  stroke: #4698eb !important;
+}
+
+.dark .icon {
+  color: #60a5fa !important;
+}
+
+.dark .course-list {
+  background: #0c1322 !important;
+  border-color: #334155 !important;
+}
+
+.dark .course-list li {
+  color: #e2e8f0 !important;
+}
+
+.dark .why-choose-flat-badge {
+  background-color: #0a2536 !important;
+  color: #4698eb !important;
+}
+
+.dark .hero h1 {
+  color: #13b7ed !important;
+}
+
+.dark .hero-subtext {
+  color: #13b7ed !important;
+}
+
+.dark .training-benefits-section {
+  background-color: #080c17;
+}
+.icon-component{
+  color:#4698eb;
+}
+.hero {
+  position: relative;
+  min-height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/Courses.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-top: 0;
+  padding: 25px 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.75),
+    rgba(15, 23, 42, 0.6),
+    rgba(15, 23, 42, 0.75)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 720px;
+  color: #ffffff; 
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.hero-subtext {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: white;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  max-width: 600px;
+}
+
+
+.training-benefits-section {
+  padding: 2.5rem 0;
+}
+
+.training-benefits-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #072069;
+  margin-bottom: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.benefits-subtext {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  color: rgb(104, 112, 143);
+  line-height: 1.7;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.training-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.program-structure-new {
+  padding: 2rem 0 3rem 0;
+  background-color:  #f6f9fc;
+}
+
+.program-structure-new .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.structure-subtitle {
+  color: rgb(104, 112, 143);
+  font-size: 1.125rem;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.structure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .structure-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .structure-title {
+    font-size: 3rem;
+  }
+  
+  .training-benefits-section h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .program-structure-new {
+    padding: 3rem 0;
+  }
+  
+  .structure-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .structure-title {
+    font-size: 2rem;
+  }
+  
+  .structure-subtitle {
+    font-size: 1rem;
+  }
+}
+
+.catalog {
+  padding-top: 3rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .catalog {
+    background-color: #080c17;
+  }
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.icon {
+  margin-right: 8px;
+  color: rgb(7, 32, 105);
+}
+
+.catalog-card .secondary-btn,
+.catalog-card .btn-secondary,
+.card-catalog .btn-secondary {
+  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.view-courses-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.course-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #dadee8;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.view-courses-container:hover .course-list {
+  display: block;
+}
+
+.course-list li {
+  margin-bottom: 8px;
+  color: #0f172a;
+  font-size: 0.95rem;
+  list-style: disc inside;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.25s forwards;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-20px);
+  animation: slideIn 0.25s forwards;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  color: #072069;
+}
+
+.modal-content ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-content button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  to { transform: translateY(0); }
+}
+
+.why-choose-flat-section {
+  background-color: #f6f9fc;
+  padding: 100px 20px 120px;
+  margin-top: 60px;
+}
+
+.why-choose-flat-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-choose-flat-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.why-choose-flat-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background-color: #d8deeb;
+  color: #072069;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.why-choose-flat-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 8px 0 12px 0;
+  color: #0f172a;
+}
+
+.why-choose-flat-description {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #666e7d;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.why-choose-flat-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .why-choose-flat-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.why-choose-flat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  flex: 1 1 45%;
+}
+
+.why-choose-flat-item svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.why-choose-flat-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  margin-top: 0;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.why-choose-flat-item p {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.training-cta-section {
+  background-color: #072069;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.training-cta-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.training-cta-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.training-cta-description {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+.training-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  background-color: #f1f5ff;
+  color: #072069;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.training-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  .training-cta-button {
+    background-color: #4698eb;
+    color: #080c17;
+  }
+  
+  .training-cta-button:hover {
+    background-color: #3a7ec9;
+    color: #080c17;
+  }
+}
+
+.training-cta-arrow {
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .training-cta-title {
+    font-size: 32px;
+  }
+
+  .training-cta-description {
+    font-size: 18px;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .training-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 60vh;
+    padding: 30px 15px;
+    margin-top: 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtext {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+
+  .training-benefits-section h2,
+  .structure-title {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

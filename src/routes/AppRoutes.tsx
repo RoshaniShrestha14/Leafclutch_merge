@@ -8,6 +8,9 @@ import OurProjects from "../pages/others/OurProjects";
 import NotFound from "../components/ui/NotFound";
 import Internship from "../pages/careers/Internship";
 import Home from "../pages/Home";
+import { AllServices } from "../pages/AllServices";
+import ServiceDetailPage from "../pages/ServiceDetailPage";
+import CoursesAndTraining from "../pages/CoursesAndTraining";
 
 export default function AppRoutes() {
   return (
@@ -15,6 +18,9 @@ export default function AppRoutes() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/all-services" element={<AllServices />} />
+          <Route path="/services/:slug" element={<ServiceDetailPage />} />
+          <Route path="/training/courses" element={<CoursesAndTraining />} />
           <Route path="/careers/jobs" element={<Job />} />
           <Route path="/careers/internships" element={<Internship />} />
           <Route path="/others/blog" element={<Blog />} />

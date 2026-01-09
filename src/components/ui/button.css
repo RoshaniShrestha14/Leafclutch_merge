@@ -1,0 +1,212 @@
+/* Base Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 34px;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hero Button */
+.btn-hero {
+  background: white;
+  color: #072069;
+  padding: 14px 34px;
+  border-radius: 14px;
+}
+
+.btn-hero:hover {
+  background: #072069;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Primary Button */
+.btn-primary {
+  background: rgb(7, 32, 105);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  background: rgb(7, 32, 105);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: white;
+  color: #0f1e52;
+  border: 1px solid #0f1e52;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+}
+
+.btn-secondary:hover {
+  background: #0f1e52;
+  color: white;
+}
+
+/* Outline Button */
+.btn-outline {
+  border: 1px solid #0f1e52;
+  color: #0f1e52;
+  background: transparent;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+}
+
+.btn-outline:hover {
+  background: #0f1e52;
+  color: white;
+}
+
+/* Service Button */
+.btn-service {
+  padding: 12px 16px;
+  border: 1px solid #c7d2fe;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #072069;
+  background: transparent;
+  text-align: center;
+}
+
+.btn-service:hover {
+  background: #072069;
+  color: #ffffff;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .btn-hero {
+    background: #4698eb;
+    color: #080c17;
+  }
+  
+  .btn-hero:hover {
+    background: #3a7ec9;
+    color: #080c17;
+  }
+  
+  .btn-secondary {
+    background: #4698eb;
+    color: #080c17;
+    border-color: #4698eb;
+  }
+  
+  .btn-secondary:hover {
+    background: #3a7ec9;
+    color: #080c17;
+  }
+  
+  .btn-primary {
+    background: #4698eb;
+    color: #080c17;
+  }
+  
+  .btn-primary:hover {
+    background: #3a7ec9;
+    color: #080c17;
+  }
+  
+  .btn-outline {
+    border-color: #4698eb;
+    color: #4698eb;
+  }
+  
+  .btn-outline:hover {
+    background: #4698eb;
+    color: #080c17;
+  }
+  
+  .btn-service {
+    color: #4698eb;
+    border-color: #4698eb;
+  }
+  
+  .btn-service:hover {
+    background: #4698eb;
+    color: #080c17;
+  }
+}
+
+.dark .btn-hero {
+  background: #4698eb;
+  color: #080c17;
+}
+
+.dark .btn-hero:hover {
+  background: #3a7ec9;
+  color: #080c17;
+}
+
+.dark .btn-secondary {
+  background: #4698eb;
+  color: #080c17;
+  border-color: #4698eb;
+}
+
+.dark .btn-secondary:hover {
+  background: #3a7ec9;
+  color: #080c17;
+}
+
+.dark .btn-primary {
+  background: #4698eb;
+  color: #080c17;
+}
+
+.dark .btn-primary:hover {
+  background: #3a7ec9;
+  color: #080c17;
+}
+
+.dark .btn-outline {
+  border-color: #4698eb;
+  color: #4698eb;
+}
+
+.dark .btn-outline:hover {
+  background: #4698eb;
+  color: #080c17;
+}
+
+.dark .btn-service {
+  color: #4698eb;
+  border-color: #4698eb;
+}
+
+.dark .btn-service:hover {
+  background: #4698eb;
+  color: #080c17;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    padding: 0.65rem 1.5rem;
+  }
+}

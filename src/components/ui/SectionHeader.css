@@ -1,0 +1,67 @@
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-badge-wrapper {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #072069;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.section-description {
+  color: rgb(104, 112, 143);
+  font-size: 1.125rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .section-title {
+    color: #4698eb !important;
+  }
+  
+  .section-description {
+    color: #cbd5e1 !important;
+  }
+}
+
+.dark .section-title {
+  color: #4698eb !important;
+}
+
+.dark .section-description {
+  color: #cbd5e1 !important;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+  }
+}
