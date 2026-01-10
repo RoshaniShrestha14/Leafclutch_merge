@@ -79,7 +79,7 @@ export const ServiceCard: React.FC = () => {
         <span className="services-badge">What We Offer</span>
         <h2 className="services-section-title">Available Services</h2>
         <p className="services-description">
-          Comprehensive technology solutions tailored to your business needs.
+          We leverage the latest technologies and industry best practices to deliver exceptional digital experiences that scale.
         </p>
       </div>
       <div className="services-grid">
