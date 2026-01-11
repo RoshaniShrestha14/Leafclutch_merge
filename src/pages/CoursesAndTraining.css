@@ -1,5 +1,5 @@
 /* dark mode  */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .hero-content {
     color: #ffffff;
   }
@@ -81,7 +81,7 @@
   .training-benefits-section {
     background-color: #080c17;
   }
-}
+} */
 
 /* dark mode for toogle */
 .dark .hero-content {
@@ -153,7 +153,10 @@
   background-color: #0a2536 !important;
   color: #4698eb !important;
 }
-
+.dark .training-cta-button{
+  background: #3a7ec9 !important;
+ color:  #0a2536 !important;
+}
 .dark .hero h1 {
   color: #13b7ed !important;
 }
@@ -316,11 +319,11 @@
   padding-top: 3rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .catalog {
     background-color: #080c17;
   }
-}
+} */
 
 .catalog-grid {
   display: grid;
@@ -552,7 +555,7 @@
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .training-cta-button {
     background-color: #4698eb;
     color: #080c17;
@@ -562,7 +565,7 @@
     background-color: #3a7ec9;
     color: #080c17;
   }
-}
+} */
 
 .training-cta-arrow {
   font-size: 22px;

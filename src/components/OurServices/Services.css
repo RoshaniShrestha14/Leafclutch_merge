@@ -14,7 +14,7 @@
 }
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .hero-title {
     color: #13b7ed !important;
   }
@@ -100,7 +100,7 @@
   .how-step {
     color: #1e3a5f !important;
   }
-}
+} */
 
 /* Dark mode - Manual toggle with .dark class */
 .dark .hero-title {
@@ -502,7 +502,7 @@
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .end-button {
     background-color: #4698eb;
     color: #080c17;
@@ -512,7 +512,7 @@
     background-color: #3a7ec9;
     color: #080c17;
   }
-}
+} */
 
 .dark .end-button {
   background-color: #4698eb;

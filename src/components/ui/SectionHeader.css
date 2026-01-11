@@ -31,7 +31,7 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .section-title {
     color: #4698eb !important;
   }
@@ -39,7 +39,7 @@
   .section-description {
     color: #cbd5e1 !important;
   }
-}
+} */
 
 .dark .section-title {
   color: #4698eb !important;

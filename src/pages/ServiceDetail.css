@@ -1,5 +1,5 @@
 /* Dark Mode Support - System preference AND manual toggle */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .hero h1 {
     color: #13b7ed !important;
   }
@@ -7,7 +7,7 @@
   .hero-subtext {
     color: #13b7ed !important;
   }
-}
+} */
 
 .dark .hero h1 {
   color: #13b7ed !important;
@@ -89,7 +89,7 @@
   width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     background-color: #080c17;
   }
@@ -109,7 +109,7 @@
   .service-section.light-bg {
     background-color: #080c17 !important;
   }
-}
+} */
 
 .dark body {
   background-color: #080c17;
@@ -159,18 +159,18 @@
   background-color: rgba(232, 240, 254, 0.5);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .service-section.light-bg {
     background-color: #080c17 !important;
   }
-}
+} */
 
 .benefits-section {
   background-color: #f6f9fc;
   padding: 60px 20px 80px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .benefits-section {
     background-color: #0f1626 !important;
   }
@@ -195,7 +195,7 @@
   .benefit-card-desc {
     color: #cbd5e1 !important;
   }
-}
+} */
 
 .dark .benefits-section {
   background-color: #0f1626 !important;
@@ -316,13 +316,13 @@
   font-size: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .tech-pill {
     background-color: #0a2536;
     color: #4698eb;
     border-color: #334155;
   }
-}
+} */
 
 .dark .tech-pill {
   background-color: #0a2536;

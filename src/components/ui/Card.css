@@ -94,7 +94,7 @@
 }
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .card {
     background: #0c1322;
     border-color: #334155 !important;
@@ -140,7 +140,7 @@
   .card-catalog:hover {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
   }
-}
+} */
 
 .dark .card {
   background: #0c1322;

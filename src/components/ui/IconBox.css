@@ -51,7 +51,7 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .icon-box-structure {
     background-color: #0a2536;
   }
@@ -79,7 +79,7 @@
     color: #4698eb;
     stroke: #4698eb;
   }
-}
+} */
 
 .dark .icon-box-structure {
   background-color: #0a2536;

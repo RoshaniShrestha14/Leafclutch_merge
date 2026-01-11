@@ -23,7 +23,7 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .badge-hero {
     background-color: #0a2536 !important;
     color: #4698eb !important;
@@ -34,7 +34,7 @@
     background-color: #0a2536 !important;
     color: #4698eb !important;
   }
-}
+} */
 
 .dark .badge-hero {
   background-color: #0a2536 !important;

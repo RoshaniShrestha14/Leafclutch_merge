@@ -93,7 +93,7 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .btn-hero {
     background: #4698eb;
     color: #080c17;
@@ -144,7 +144,7 @@
     background: #4698eb;
     color: #080c17;
   }
-}
+} */
 
 .dark .btn-hero {
   background: #4698eb;
