@@ -67,12 +67,12 @@ const Contact_Form: React.FC = () => {
     const body = encodeURIComponent(
       `Hello Leafclutch Team,
 
-My name is ${formData.fullName} and I am reaching out regarding your services.
+My name is ${formData.fullName} and I am reaching out regarding your courses.
 
 Full Name: ${formData.fullName}
 Email: ${formData.email}
 Phone: ${formData.phone || "N/A"}
-Service Interested In: ${formData.service || "Not Selected"}
+Course Interested In: ${formData.service || "Not Selected"}
 
 Sincerely,
 ${formData.fullName}`
@@ -218,14 +218,11 @@ ${formData.fullName}`
                   onChange={handleChange}
                   className="service-select"
                 >
-                  <option value="">Course Interested In</option>
-                  <option>Web Development</option>
-                  <option>App Development</option>
-                  <option>AI & Data Science</option>
-                  <option>Data Analysis</option>
-                  <option>Cyber Security</option>
-                  <option>DevOps Solution</option>
-                  <option>Digital Marketing</option>
+                  <option value="">Select a Course</option>
+                  <option>Core Tech and Design</option>
+                  <option>Data and AI program</option>
+                  <option>DSA program</option>
+                  <option>Programming Language</option>
                   <option>Other</option>
                 </select>
               </div>
