@@ -63,7 +63,7 @@ const Contact_Form: React.FC = () => {
 
     if (!validateForm()) return;
 
-    const subject = encodeURIComponent("Service Inquiry");
+    const subject = encodeURIComponent("Course Inquiry");
     const body = encodeURIComponent(
       `Hello Leafclutch Team,
 
