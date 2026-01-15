@@ -1,4 +1,5 @@
-import React, { useState, FormEvent } from "react";
+import React, { useState } from "react";
+import type { FormEvent } from "react";
 import { Send, AlertCircle } from "lucide-react";
 import "./Contact_Form.css";
 import Badge from "../ui/Badge";
