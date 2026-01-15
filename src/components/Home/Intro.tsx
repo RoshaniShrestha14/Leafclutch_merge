@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { Rocket, Zap, Shield, Clock, Sparkles } from "lucide-react";
+import { Zap, Shield, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./intro.css";
 

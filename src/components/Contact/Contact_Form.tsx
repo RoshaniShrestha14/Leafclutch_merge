@@ -1,6 +1,6 @@
 import React from "react";
 import type { FormEvent } from "react";
-import { Clock, Mail, MapPin, Send } from "lucide-react";
+import { Clock, Mail, Send } from "lucide-react";
 import "./Contact_Form.css";
 import Badge from "../ui/Badge";
 import { Button } from "../ui/button";
