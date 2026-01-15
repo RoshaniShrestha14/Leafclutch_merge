@@ -1,5 +1,5 @@
 import React from "react";
-import { UserPlus, ArrowRight } from "lucide-react";
+import { UserPlus } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Hero: React.FC = () => {
@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
 
         {/* Subtext */}
         <motion.p
-          className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-12"
+          className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
         </motion.p>
 
         {/* Button */}
-        <motion.button
+        {/* <motion.button
           className="flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition-transform shadow-lg group"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
         >
           Enroll Now
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </motion.button>
+        </motion.button> */}
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
-import { TbBrandTiktok } from "react-icons/tb";
+import { TbBrandTiktok, TbBrandDiscord } from "react-icons/tb";
 
 const services = [
   { name: "Web Development", href: "/services/web-development" },
@@ -18,29 +18,58 @@ const services = [
   { name: "Cybersecurity", href: "/services/cybersecurity" },
   { name: "Data Science", href: "/services/data-science" },
   { name: "Digital Marketing", href: "/services/digital-marketing" },
+  { name: "Training & Internship", href: "/training" },
 ];
 
-const edtech = [
-  { name: "Courses", href: "/training/courses" },
-  { name: "Internships", href: "/training/internships" },
-  { name: "Mentorship", href: "/training/mentorship" },
-  { name: "Certifications", href: "/training/certifications" },
+// const training = [
+//   { name: "Program Structure", href: "/training/courses#program-structure-new" },
+//   { name: "Our Courses", href: "/training/courses#catalog" },
+//   { name: "Available Internships", href: "/training/courses#catalog" },
+//   { name: "Key Benefits", href: "/training/courses#why-choose-flat-section" },
+// ];
+const training = [
+  { name: "Program Structure", href: "/training/courses#program-structure-new" },
+  { name: "Our Courses", href: "/training/courses#courses" },         
+  { name: "Available Internships", href: "/training/courses#internships" }, 
+  { name: "Key Benefits", href: "/training/courses#why-choose-flat-section" },
 ];
+
 
 const company = [
   { name: "About Us", href: "/about" },
-  { name: "Careers", href: "/about#careers" },
-  { name: "Resources", href: "/resources" },
-  { name: "Contact", href: "mailto:careers@leafclutchtech.com.np" },
+  { name: "Services", href: "/all-services" },
+  { name: "Careers", href: "/careers/jobs" },
+  { name: "Contact", href: "mailto:hr@leafclutchtech.com.np" },
 ];
 
 const socials = [
-  { icon: Facebook, href: "#", label: "Facebook" },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/profile.php?id=61584902195796",
+    label: "Facebook",
+  },
   { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/leafclutch-technologies/",
+    label: "LinkedIn",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/leafclutch.technologies/",
+    label: "Instagram",
+  },
+  {
+    icon: Youtube,
+    href: "https://www.youtube.com/@LeafclutchTechnologies",
+    label: "YouTube",
+  },
   { icon: TbBrandTiktok, href: "#", label: "Tiktok" },
+  {
+    icon: TbBrandDiscord,
+    href: "https://discord.gg/4aDwcMZBPq",
+    label: "Discord",
+  },
 ];
 
 export function Footer() {
@@ -68,7 +97,7 @@ export function Footer() {
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
               >
                 <Mail className="h-4 w-4" />
-                info@leafclutch.com
+                info@leafclutchtech.com.np
               </a>
               <a
                 href="tel:+1234567890"
@@ -89,6 +118,8 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 >
@@ -117,13 +148,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* EdTech */}
+          {/* training */}
           <div>
             <h3 className="text-base font-semibold text-foreground">
-              Training
+              Training & Internship
             </h3>
             <ul className="mt-4 space-y-3">
-              {edtech.map((link) => (
+              {training.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}

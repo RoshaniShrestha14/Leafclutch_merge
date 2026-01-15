@@ -10,8 +10,9 @@ import {
   CheckCircle,
   TrendingUp,
   Award,
-  Zap,
+  Zap, Phone,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import Button from "../components/ui/buttons";
 import Badge from "../components/ui/Badge";
 import Container from "../components/ui/Container";
@@ -195,6 +196,26 @@ const features = [
         "If you are highly capable, you may be promoted earlier based on your skill level. Exceptional performers can advance faster through the program.",
     },
   ];
+  const emailRecipient = "careers@leafclutchtech.com.np";
+
+const generateMailToLink = (internshipTitle: string) => {
+  const body = `Hello,
+
+I would like to apply for the ${internshipTitle} position. Here is my information:
+
+Name: [Your Name]
+LinkedIn: [Your LinkedIn]
+GitHub: [Your GitHub]
+Resume: Please attach your resume file.
+
+Thank you.
+`;
+
+  return `mailto:${emailRecipient}?subject=${encodeURIComponent(
+    `Internship Application: ${internshipTitle}`
+  )}&body=${encodeURIComponent(body)}`;
+};
+
 
   return (
     <>
@@ -212,9 +233,14 @@ const features = [
             projects, expert mentorship, and a real-world internship—so you
             become industry-ready and confident to launch your career."
           </p>
-          <Button variant="hero" href="/register" icon={<ArrowRight size={18} />}>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSehIqCJm6ITkjUJcu9djYG4H60Uku61Z4Wlg_naCjTLUTjqlQ/viewform?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer">
+          <Button variant="hero" icon={<ArrowRight size={18}  />}>
             Enroll Now
           </Button>
+          </a>
         </Container>
       </section>
 
@@ -235,7 +261,7 @@ const features = [
         </div>
       </section>
 
-      <section className="program-structure-new">
+      <section className="program-structure-new"  data-scroll="program-structure-new">
         <Container>
           <SectionHeader 
             badge="Your Path to success"
@@ -260,7 +286,7 @@ const features = [
         </Container>
       </section>
 
-      <section className="catalog">
+      <section className="catalog" data-scroll="courses">
         <Container>
           <SectionHeader 
             badge="Available Options"
@@ -296,10 +322,15 @@ const features = [
                     View Courses
                   </Button>
                 )}
-
-                <Button variant="secondary" href="/register">
+                <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSehIqCJm6ITkjUJcu9djYG4H60Uku61Z4Wlg_naCjTLUTjqlQ/viewform?usp=sharing&ouid=102811312275506082295"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="secondary">
                   Enroll Now
                 </Button>
+                </a>
               </Card>
             ))}
           </div>
@@ -322,7 +353,7 @@ const features = [
         </Container>
       </section>
 
-      <section className="catalog">
+      <section className="catalog" data-scroll="internships">
         <Container>
           <SectionHeader 
             title="Available Internships"
@@ -343,16 +374,20 @@ const features = [
                 <p>
                   <DollarSign className="icon" /> {item.price}
                 </p>
-                <Button variant="secondary" href="/register">
-                  Apply Now
-                </Button>
+                <a
+                  href={generateMailToLink(item.title)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="secondary">Apply Now</Button>
+                </a>          
               </Card>
             ))}
           </div>
         </Container>
       </section>
 
-<section className="why-choose-flat-section">
+<section className="why-choose-flat-section"  data-scroll="why-choose-flat-section">
   <div className="why-choose-flat-container">
     <div className="why-choose-flat-header">
       <span className="why-choose-flat-badge">Why Choose Us</span>
@@ -378,7 +413,8 @@ const features = [
     </div>
   </div>
 </section>
-<section className="training-cta-section">
+
+{/* <section className="training-cta-section">
   <div className="training-cta-container">
     <h2 className="training-cta-title">Ready to Join?</h2>
     <p className="training-cta-description">
@@ -389,7 +425,64 @@ const features = [
       <span className="training-cta-arrow">→</span>
     </Link>
   </div>
-</section>
+</section> */}
+ <section className="final-cta">
+      {/* Decorative shapes */}
+      <div className="cta-shape cta-shape-top" />
+      <div className="cta-shape cta-shape-bottom" />
+
+      <div className="cta-container">
+        <h2 className="cta-title">Limited Seats Available!</h2>
+        <p className="cta-subtitle">
+          Start learning today. Prove your skills and get promoted to an
+          internship. Our team will guide you through the next steps.
+        </p>
+
+        <div className="cta-grid">
+          {/* Contact 1 */}
+          <a href="tel:+9779766722920" className="cta-card">
+            <div className="cta-icon mint">
+              <Phone size={16} />
+            </div>
+            <div className="cta-text">
+              <h3>Siddhartha Pathak</h3>
+              <p>+977-9766722920</p>
+            </div>
+          </a>
+
+          {/* Contact 2 */}
+          <a href="tel:+9779867420560" className="cta-card accent">
+            <div className="cta-icon accent">
+              <Phone size={16} />
+            </div>
+            <div className="cta-text">
+              <h3>Shubham Kr. Deo</h3>
+              <p>+977-9766715666</p>
+            </div>
+          </a>
+
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/9766715768?text=I%20want%20to%20apply"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-whatsapp"
+          >
+            <div className="cta-whatsapp-inner">
+              <div className="cta-whatsapp-left">
+                <div className="cta-whatsapp-icon">
+                  <FaWhatsapp />
+                </div>
+                <h3>Apply via WhatsApp</h3>
+              </div>
+              <div className="cta-arrow">
+                <ArrowRight size={16} />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
     </>
   );

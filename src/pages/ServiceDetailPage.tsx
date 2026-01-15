@@ -13,6 +13,7 @@ import {
   Layers,
   Zap,
   Clock,
+  PhoneCall,
 } from "lucide-react";
 import Button from "../components/ui/buttons";
 import Badge from "../components/ui/Badge";
@@ -27,6 +28,16 @@ type Benefit = {
   description: string;
 };
 
+// type Service = {
+//   title: string;
+//   subtitle: string;
+//   description: string;
+//   icon: React.ElementType;
+//   heroImage: string;
+//   features: string[];
+//   technologies: string[];
+//   benefits: Benefit[];
+// };
 type Service = {
   title: string;
   subtitle: string;
@@ -36,7 +47,13 @@ type Service = {
   features: string[];
   technologies: string[];
   benefits: Benefit[];
+  developmentTypes?: {
+    title: string;
+    description: string;
+    stack: string[];
+  }[];
 };
+
 
 const serviceData: Record<string, Service> = {
   "web-development": {
@@ -46,6 +63,24 @@ const serviceData: Record<string, Service> = {
       "We create custom websites and web applications that are fast, secure, and user-friendly. Our team specializes in modern frameworks and follows best practices for SEO, accessibility, and performance.",
     icon: Globe,
     heroImage: "/Web%20development.jpg",
+    developmentTypes: [
+  {
+    title: "Frontend Development",
+    description: "We build fast, beautiful, and responsive user interfaces that deliver outstanding user experience.",
+    stack: ["React", "Next.js", "Vue", "Tailwind CSS"]
+  },
+  {
+    title: "Backend Development",
+    description: "We develop secure APIs, databases, and server logic that power your application.",
+    stack: ["Node.js", "Python", "PostgreSQL", "REST API"]
+  },
+  {
+    title: "Full Stack Development",
+    description: "We handle everything from UI to server, database, and deployment.",
+    stack: ["React", "Node.js", "PostgreSQL", "AWS", "Docker"]
+  }
+],
+
     features: [
       "Custom Web Applications",
       "E-commerce Solutions",
@@ -54,7 +89,7 @@ const serviceData: Record<string, Service> = {
       "API Development",
       "Web Optimization",
     ],
-    technologies: ["React", "Next.js", "Vue.js", "Node.js", "Python", "PostgreSQL"],
+    technologies: ["React", "Next.js", "Vue.js", "Node.js", "Python", "PostgreSQL", "Tailwind CSS", "TypeScript"],
     benefits: [
       { icon: Zap, title: "Fast Performance", description: "Optimized for speed and efficiency" },
       { icon: Layers, title: "Scalable Architecture", description: "Built to grow with your business" },
@@ -210,8 +245,8 @@ const ServiceDetail: React.FC = () => {
       <section className="hero" style={{ backgroundImage: `url(${service.heroImage})` }}>
         <div className="hero-overlay" />
         <Container className="hero-content">
-          <IconBox variant="hero">
-            <Icon size={34} strokeWidth={2} />
+          <IconBox  variant="hero" >
+            <Icon size={34} strokeWidth={2} variant="hero" /> 
           </IconBox>
           <Badge variant="hero">{service.subtitle}</Badge>
           <h1>{service.title}</h1>
@@ -234,6 +269,32 @@ const ServiceDetail: React.FC = () => {
         </div>
       </section>
 
+      {slug === "web-development" && service.developmentTypes && (
+  <section className="service-section">
+    <span className="deployment-badge">Customizable</span>
+    <h2 className="deployment-title">Build Exactly What You Need</h2>
+    <p className="deployment-description">
+      Build exactly what you need from frontend to full stack.
+    </p>
+
+    <div className="dev-type-grid">
+      {service.developmentTypes.map((type) => (
+        <div key={type.title} className="dev-type-card">
+          <h3>{type.title}</h3>
+          <p>{type.description}</p>
+
+          <div className="dev-stack">
+            {type.stack.map((tech) => (
+              <span key={tech} className="dev-pill">{tech}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
+
+
      <section className="benefits-section">
   <div className="benefits-container">
     <div className="benefits-header">
@@ -248,7 +309,7 @@ const ServiceDetail: React.FC = () => {
       {service.benefits.map((benefit) => (
         <div key={benefit.title} className="benefit-card">
           <IconBox variant="benefit">
-            <benefit.icon stroke="rgb(7, 32, 105)"/>
+            <benefit.icon />
           </IconBox>
           <h3 className="benefit-card-title">{benefit.title}</h3>
           <p className="benefit-card-desc">{benefit.description}</p>
@@ -273,8 +334,8 @@ const ServiceDetail: React.FC = () => {
         <p>Let's discuss your web development needs and create a solution that delivers results.</p>
 
         <div className="cta-actions">
-          <Button variant="secondary" href="/contact">
-            Schedule a Call
+          <Button variant="secondary" href="https://wa.me/9766722920?text=I%20want%20to%20schedule%20a%20call" rel="noopener noreferrer">
+           <PhoneCall></PhoneCall> Schedule a Call
           </Button>
           <Button variant="secondary" href="/all-services">
             View All Services

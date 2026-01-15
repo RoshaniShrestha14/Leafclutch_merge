@@ -2,7 +2,7 @@ import React from 'react';
 import './Badge.css';
 
 interface BadgeProps {
-  variant?: 'hero' | 'structure';
+  variant?: 'hero' | 'structure' | 'home';
   children: React.ReactNode;
   className?: string;
 }

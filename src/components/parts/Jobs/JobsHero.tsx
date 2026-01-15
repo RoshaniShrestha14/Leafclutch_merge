@@ -1,5 +1,5 @@
 import React from "react";
-import { Briefcase, ArrowRight } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Hero: React.FC = () => {
@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
 
         {/* Subtext */}
         <motion.p
-          className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-12"
+          className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
         </motion.p>
 
         {/* Button */}
-        <motion.div
+        {/* <motion.div
           className="flex flex-col sm:flex-row gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
             Apply Now
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

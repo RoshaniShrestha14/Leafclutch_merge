@@ -6,7 +6,6 @@
   border-radius: 0.75rem;
 }
 
-/* Hero Icon Box - larger, used in hero sections */
 .icon-box-hero {
   width: 72px;
   height: 72px;
@@ -16,7 +15,7 @@
   border-radius: 18px;
 }
 
-/* Structure Icon Box - medium size for cards */
+
 .icon-box-structure {
   width: 3rem;
   height: 3rem;
@@ -28,7 +27,7 @@
   color: rgb(7, 32, 105);
 }
 
-/* Benefit Icon Box - for benefit cards */
+
 .icon-box-benefit {
   height: 56px;
   width: 56px;
@@ -49,37 +48,6 @@
     height: 56px;
   }
 }
-
-/* Dark Mode Support */
-/* @media (prefers-color-scheme: dark) {
-  .icon-box-structure {
-    background-color: #0a2536;
-  }
-  
-  .icon-box-structure svg {
-    color: #4698eb;
-    stroke: white;
-  }
-  
-  .icon-box-benefit {
-    background-color: #0a2536;
-  }
-  
-  .icon-box-benefit svg {
-    color: #4698eb;
-    stroke: white;
-  }
-  
-  .icon-box-hero {
-    background: #0a2536;
-    color: #4698eb;
-  }
-  
-  .icon-box-hero svg {
-    color: #4698eb;
-    stroke: #4698eb;
-  }
-} */
 
 .dark .icon-box-structure {
   background-color: #0a2536;

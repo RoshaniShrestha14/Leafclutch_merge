@@ -5,24 +5,16 @@ import { LuCircleUserRound } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/button";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-
 const careers = [
-  { name: "Training & Internships", href: "/training/courses" },
   { name: "Jobs", href: "/careers/jobs" },
   { name: "Internships", href: "/careers/internships" },
-  { name: "Training & Internship", href: "/careers/internships" },
 ];
 
 const others = [
   { name: "Blog", href: "/others/blog" },
   { name: "Verify Certificate", href: "/others/verify-certificate" },
   { name: "Our Projects", href: "/others/our-projects" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 const services = [
@@ -34,17 +26,21 @@ const services = [
   { name: "Data Science & AI", href: "/services/data-science" },
   { name: "Digital Marketing", href: "/services/digital-marketing" },
 ];
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Services", href: "/services", dropdown: services },
+  { name: "Training & Internships", href: "/training/courses" },
+  { name: "Services", href: "/all-services", dropdown: services },
   { name: "Careers", href: "/careers", dropdown: careers },
   { name: "Others", href: "/others", dropdown: others },
 ];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isDark, setIsDark] = useState(false);
+
   const location = useLocation();
 
   const toggleTheme = () => {
@@ -52,59 +48,72 @@ export function Navbar() {
     document.documentElement.classList.toggle("dark");
   };
 
-  const isActive = (href: string) => {
-    if (href === "/") return location.pathname === "/";
-    return location.pathname.startsWith(href);
-  };
+  const isActive = (href: string) =>
+    href === "/"
+      ? location.pathname === "/"
+      : location.pathname.startsWith(href);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-card backdrop-blur-lg ">
+    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-card backdrop-blur-lg">
       <div className="container-custom">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/">
-            <img src="/logo.png" alt="Leafclutch Logo" className="h-14" />
+            <img src="/logo.png" alt="Leafclutch Logo" className="h-14 " />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden items-center gap-4 lg:flex">
+          {/* -------- Desktop Navigation -------- */}
+          <div className="hidden lg:flex items-center xl:gap-12 ">
             {navLinks.map((link) =>
               link.dropdown ? (
-                <DropdownMenu key={link.name}>
-                  <DropdownMenuTrigger asChild>
-                    <button
-                      className={`nav-link flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium ${
-                        isActive(link.href) ? "text-primary" : ""
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown(link.name)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  {/* Main button */}
+                  <Link
+                    to={link.href}
+                    className={`nav-link flex items-center gap-1 rounded-md px-3 py-2 font-semibold  ${
+                      location.pathname.startsWith(link.href)
+                        ? "text-mint font-extrabold active"
+                        : ""
+                    }`}
+                    onClick={() => setOpenDropdown(null)}
+                  >
+                    {link.name}
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform duration-200 ${
+                        openDropdown === link.name ? "rotate-180" : ""
                       }`}
-                    >
-                      {link.name}
-                      <ChevronDown className="h-4 w-4" />
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="center" className="w-56 bg-card">
-                    {/* <DropdownMenuItem asChild>
-                      <Link
-                        to={link.href}
-                        className="cursor-pointer font-medium"
-                      >
-                        All {link.name}
-                      </Link>
-                    </DropdownMenuItem> */}
-                    {link.dropdown.map((item) => (
-                      <DropdownMenuItem key={item.name} asChild>
-                        <Link to={item.href} className="cursor-pointer">
+                    />
+                  </Link>
+
+                  {/* Dropdown menu */}
+                  {openDropdown === link.name && (
+                    <div className="absolute left-0 w-56 bg-card mt-0.5 rounded-md shadow-lg border border-gray-100 dark:border-gray-700 z-10 ">
+                      {link.dropdown.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className={
+                            "block px-4 py-2  text-muted-foreground hover:bg-muted rounded-md transition-colors duration-150"
+                          }
+                          onClick={() => setOpenDropdown(null)} // close dropdown on click
+                        >
                           {item.name}
                         </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`nav-link rounded-md px-3 py-2 text-sm font-medium ${
-                    isActive(link.href) ? "text-primary" : ""
+                  className={`nav-link rounded-md px-3 py-2 font-semibold ${
+                    isActive(link.href) ? "text-mint font-extrabold active" : ""
                   }`}
                 >
                   {link.name}
@@ -113,13 +122,13 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Right Section */}
-          <div className="flex items-center gap-4">
+          {/* Right section */}
+          <div className="flex items-center gap-2 md:gap-10">
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="hidden sm:flex"
+              className="pt-0.5 sm:flex p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 transition-all"
             >
               <AnimatePresence mode="wait" initial={false}>
                 {isDark ? (
@@ -145,96 +154,154 @@ export function Navbar() {
                 )}
               </AnimatePresence>
             </Button>
-            {/* <div className="p-10">
-              <LuCircleUserRound size={40} className="text-red-500" />
-            </div> */}
-            <div className="hidden items-center gap-2 sm:flex">
-              <Button asChild>
+            <div className="hidden sm:flex">
+              {/* <Button asChild>
                 <Link to="/login">
                   <LuCircleUserRound className="!w-6 !h-6" /> Login
                 </Link>
-              </Button>
-              {/* <Button asChild>
-                <Link to="/register">Apply Now</Link>
               </Button> */}
+              <Button asChild className="!h-12">
+                <a
+                  href="https://leafclutch-dashboard.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-2 text-[1rem]"
+                >
+                  <LuCircleUserRound className="!w-7 !h-7" />
+                  Login
+                </a>
+              </Button>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile toggle */}
             <Button
               variant="ghost"
               size="icon"
               className="lg:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={() => setMobileMenuOpen((open) => !open)}
             >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              <AnimatePresence mode="wait" initial={false}>
+                {!mobileMenuOpen ? (
+                  <motion.div
+                    key="menu"
+                    initial={{ opacity: 0, rotate: -90, scale: 0.8 }}
+                    animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                    exit={{ opacity: 0, rotate: 90, scale: 0.8 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <Menu className="!h-6 !w-6" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="close"
+                    initial={{ opacity: 0, rotate: 90, scale: 0.8 }}
+                    animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                    exit={{ opacity: 0, rotate: -90, scale: 0.8 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <X className="!h-6 !w-6" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </Button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
+      {/* ---------------- MOBILE MENU ---------------- */}
+      <AnimatePresence>
         {mobileMenuOpen && (
-          <div className="animate-fade-in border-t border-border py-4 lg:hidden">
-            <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <div key={link.name}>
-                  <Link
-                    to={link.href}
-                    className={`block rounded-md px-3 py-2 text-base font-medium ${
-                      isActive(link.href)
-                        ? "bg-secondary text-primary"
-                        : "text-foreground hover:bg-muted"
-                    }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                  {link.dropdown && (
-                    <div className="ml-4 mt-1 flex flex-col gap-1">
-                      {link.dropdown.map((item) => (
+          <motion.div
+            className="lg:hidden fixed top-20 inset-x-0 bottom-0 z-50 bg-white border-t"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            {/* Scrollable container */}
+            <div className="h-auto border-b overflow-y-auto bg-card overscroll-contain px-4 py-4">
+              <div className="flex flex-col gap-2">
+                {navLinks.map((link) => {
+                  const open = openDropdown === link.name;
+
+                  return (
+                    <div key={link.name}>
+                      {/* Main link */}
+                      {link.dropdown ? (
                         <Link
-                          key={item.name}
-                          to={item.href}
-                          className="block rounded-md px-3 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                          to={link.href}
+                          className="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium active:scale-[0.98]"
+                          onClick={() => {
+                            setOpenDropdown(open ? null : link.name);
+                            setMobileMenuOpen(false);
+                          }}
+                        >
+                          <span>{link.name}</span>
+                          <ChevronDown
+                            className={`h-4 w-4 transition-transform duration-200 ${
+                              open ? "rotate-180" : ""
+                            }`}
+                          />
+                        </Link>
+                      ) : (
+                        <Link
+                          to={link.href}
+                          className="flex w-full items-center rounded-md px-3 py-2 text-base font-medium active:scale-[0.98]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          {item.name}
+                          {link.name}
                         </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+                      )}
 
-              <div className="mt-4 flex flex-col gap-2 border-t border-border pt-4">
-                <div className="flex items-center justify-between px-3">
-                  <span className="text-sm font-medium">Theme</span>
-                  <Button variant="ghost" size="icon" onClick={toggleTheme}>
-                    {isDark ? (
-                      <Sun className="h-5 w-5" />
-                    ) : (
-                      <Moon className="h-5 w-5" />
-                    )}
+                      {/* Dropdown links */}
+                      {link.dropdown && open && (
+                        <div className="ml-4 mt-1 flex flex-col gap-1 border-l pl-3">
+                          {link.dropdown.map((item) => (
+                            <Link
+                              key={item.name}
+                              to={item.href}
+                              className="rounded-md px-3 py-2 text-sm text-muted-foreground active:bg-muted"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+
+                {/* Footer */}
+                <div className="mt-4 border-t pt-4 flex flex-col gap-3">
+                  {/* <Button size="icon" onClick={toggleTheme} className="mx-auto">
+                    {isDark ? <Sun /> : <Moon />}
+                  </Button> */}
+
+                  {/* <Button asChild>
+                    <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
+                      <LuCircleUserRound className="!w-5 !h-5" /> Login
+                    </Link>
+                  </Button> */}
+                  <Button asChild>
+                    <a
+                      href="https://leafclutch-dashboard.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center gap-2"
+                    >
+                      <LuCircleUserRound className="!w-5 !h-5" />
+                      Login
+                    </a>
                   </Button>
                 </div>
-                <Button variant="outline" asChild className="mx-3">
-                  <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
-                    Login
-                  </Link>
-                </Button>
-                <Button asChild className="mx-3">
-                  <Link to="/register" onClick={() => setMobileMenuOpen(false)}>
-                    Apply Now
-                  </Link>
-                </Button>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </nav>
   );
 }

@@ -18,13 +18,27 @@ export const CTA: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="flex items-center justify-center gap-2 bg-card text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-background transition-colors shadow-lg">
-            Apply Now
-            <ArrowRight className="w-5 h-5" />
-          </button>
-          <button className="px-10 py-4 rounded-xl border-2 border-primary-foreground text-primary-foreground font-bold text-lg hover:bg-primary-foreground/10 transition-colors">
-            Contact Us
-          </button>
+          <a
+            href="mailto:careers@leafclutchtech.com.np"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="flex items-center justify-center gap-2 bg-card text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-background transition-colors shadow-lg">
+              Apply Now
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </a>
+          <a>
+            <a
+              href="mailto:hr@leafclutchtech.com.np"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="px-10 py-4 rounded-xl border-2 border-primary-foreground text-primary-foreground font-bold text-lg hover:bg-primary-foreground/10 transition-colors">
+                Contact Us
+              </button>
+            </a>
+          </a>
         </div>
       </div>
     </section>

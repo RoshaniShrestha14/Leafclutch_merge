@@ -77,8 +77,8 @@ const App: React.FC = () => {
             variants={fadeUp}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
-              Verify <span className="gradient-text">Internship</span>{" "}
+            <h1 className="text-4xl gradient-text sm:text-6xl font-extrabold tracking-tight">
+              Verify Internship{" "}
               Credentials
             </h1>
             <p className="text-muted-foreground text-lg sm:text-xl max-w-xl mx-auto">
