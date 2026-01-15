@@ -35,7 +35,6 @@ const navLinks = [
   { name: "Careers", href: "/careers", dropdown: careers },
   { name: "Others", href: "/others", dropdown: others },
 ];
-
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -73,14 +72,12 @@ export function Navbar() {
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   {/* Main button */}
-                  <Link
-                    to={link.href}
-                    className={`nav-link flex items-center gap-1 rounded-md px-3 py-2 font-semibold  ${
+                  <button
+                    className={`nav-link flex items-center gap-1 rounded-md px-3 py-2  ${
                       location.pathname.startsWith(link.href)
-                        ? "text-mint font-extrabold active"
-                        : ""
+                        ? "text-primary font-bold active"
+                        : "font-semibold"
                     }`}
-                    onClick={() => setOpenDropdown(null)}
                   >
                     {link.name}
                     <ChevronDown
@@ -88,7 +85,7 @@ export function Navbar() {
                         openDropdown === link.name ? "rotate-180" : ""
                       }`}
                     />
-                  </Link>
+                  </button>
 
                   {/* Dropdown menu */}
                   {openDropdown === link.name && (
@@ -100,7 +97,10 @@ export function Navbar() {
                           className={
                             "block px-4 py-2  text-muted-foreground hover:bg-muted rounded-md transition-colors duration-150"
                           }
-                          onClick={() => setOpenDropdown(null)} // close dropdown on click
+                          onClick={() => {
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                            setOpenDropdown(null);
+                          }}
                         >
                           {item.name}
                         </Link>
@@ -112,9 +112,14 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`nav-link rounded-md px-3 py-2 font-semibold ${
-                    isActive(link.href) ? "text-mint font-extrabold active" : ""
+                  className={`nav-link rounded-md px-3 py-2  ${
+                    isActive(link.href)
+                      ? "text-primary font-bold active"
+                      : "font-semibold"
                   }`}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 >
                   {link.name}
                 </Link>
@@ -154,7 +159,7 @@ export function Navbar() {
                 )}
               </AnimatePresence>
             </Button>
-            <div className="hidden sm:flex">
+            <div className="hidden lg:flex">
               {/* <Button asChild>
                 <Link to="/login">
                   <LuCircleUserRound className="!w-6 !h-6" /> Login
@@ -229,13 +234,11 @@ export function Navbar() {
                     <div key={link.name}>
                       {/* Main link */}
                       {link.dropdown ? (
-                        <Link
-                          to={link.href}
+                        <button
                           className="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium active:scale-[0.98]"
-                          onClick={() => {
-                            setOpenDropdown(open ? null : link.name);
-                            setMobileMenuOpen(false);
-                          }}
+                          onClick={() =>
+                            setOpenDropdown(open ? null : link.name)
+                          }
                         >
                           <span>{link.name}</span>
                           <ChevronDown
@@ -243,7 +246,7 @@ export function Navbar() {
                               open ? "rotate-180" : ""
                             }`}
                           />
-                        </Link>
+                        </button>
                       ) : (
                         <Link
                           to={link.href}
