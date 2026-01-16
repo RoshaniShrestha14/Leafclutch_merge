@@ -339,4 +339,34 @@
   align-items: center;
   gap: 0.25rem;
 }
+@media (max-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .contact-form-card .flex.space-x-3 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .contact-form-card .relative.w-\[11rem\] {
+    width: 100% !important;
+  }
+
+  .contact-form-card button {
+    height: auto !important;
+    min-height: 56px;
+    align-items: center;
+  }
+
+  .contact-form-card button .text-left {
+    line-height: 1.2;
+  }
+
+  .contact-form-card input[name="phone"] {
+    width: 100%;
+  }
+}
 
