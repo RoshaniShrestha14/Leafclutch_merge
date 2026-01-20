@@ -538,7 +538,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: auto; /* 🔑 THIS aligns all pills */
+  margin-top: auto; 
 }
 
 .dev-type-card::before {
@@ -584,7 +584,6 @@
   line-height: 1.7;
   margin: 18px 0 24px;
 }
-
 
 
 /* Dev Pills */

@@ -14,6 +14,8 @@ import CoursesAndTraining from "../pages/CoursesAndTraining";
 import Contact from "../pages/Contact";
 import { ScrollToTop } from "./ScrollToTop";
 import InternshipDetails from "../components/AboutUs/InternDetails";
+import CourseDetail from "../pages/CoursesPages/CourseDetail";
+import IncludedCourseDetail from "../pages/CoursesPages/IncludedCourseDetail";
 
 
 export default function AppRoutes() {
@@ -26,6 +28,8 @@ export default function AppRoutes() {
           <Route path="/about" element={<About />} />
           <Route path="/all-services" element={<AllServices />} />
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
+          <Route path="/courses/:slug" element={<CourseDetail />} />
+          <Route path="/courses/included/:id" element={<IncludedCourseDetail />} />
           <Route path="/training/courses" element={<CoursesAndTraining />} />
           <Route path="/careers/jobs" element={<Job />} />
           <Route path="/careers" element={<Job />} />

@@ -26,11 +26,18 @@ const services = [
   { name: "Data Science & AI", href: "/services/data-science" },
   { name: "Digital Marketing", href: "/services/digital-marketing" },
 ];
+const TrainingAndInternships = [
+  { name: "All Training", href: "/training/courses" },
+  { name: "Core Tech & Design Courses", href: "/courses/core-tech-design" },
+  { name: "Data & AI Programs", href: "/courses/data-ai-programs" },
+  { name: "DSA Program", href: "/courses/dsa-program" },
+  { name: "Programming Language Courses", href: "/courses/programming-language-courses" },
+];
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Training & Internships", href: "/training/courses" },
+  { name: "Training & Internships", href: "/training/courses", dropdown: TrainingAndInternships },
   { name: "Services", href: "/all-services", dropdown: services },
   { name: "Careers", href: "/careers", dropdown: careers },
   { name: "Others", href: "/others", dropdown: others },

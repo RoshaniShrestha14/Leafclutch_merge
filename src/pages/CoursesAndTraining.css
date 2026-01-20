@@ -177,7 +177,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/Courses.jpg");
+  background-image: url("https://img.freepik.com/free-vector/education-technology-futuristic-background-vector-gradient-blue-digital-remix_53876-114092.jpg?t=st=1768812546~exp=1768816146~hmac=34f11ef19de22789a11098bac7c5b16d1d6afc4fb667f412e6ff5be942350928&w=1480");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -214,7 +214,7 @@
 
 .hero-subtext {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1;
   margin-bottom: 24px;
   color: white;
   letter-spacing: 0.3px;
