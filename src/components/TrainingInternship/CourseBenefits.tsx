@@ -1,4 +1,4 @@
-import coursesData, { type Benefit } from "./CoursesData";
+import  { type Benefit } from "./CoursesData";
 
 type Props = {
   benefits: Benefit[];
