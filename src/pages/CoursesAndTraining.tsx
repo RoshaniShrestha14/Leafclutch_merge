@@ -14,6 +14,7 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import Button from "../components/ui/buttons";
 import Badge from "../components/ui/Badge";
+import { useNavigate } from "react-router-dom";
 import Container from "../components/ui/Container";
 import IconBox from "../components/ui/IconBox";
 import SectionHeader from "../components/ui/SectionHeader";
@@ -44,6 +45,20 @@ const CoursesAndTraining: React.FC = () => {
     setModalOpen(false);
   };
 
+  const getCourseLink = (title: string) => {
+  switch (title) {
+    case "Category 1: Core Tech & Design Courses":
+      return "/courses/core-tech-design";
+    case "Category 2: Data & AI Programs":
+      return "/courses/data-ai-programs";
+    case "Category 3: DSA Program":
+      return "/courses/dsa-program";
+    case "Category 4: Programming Language Courses":
+      return "/courses/programming-language-courses";
+    default:
+      return "/training/courses";
+  }
+};
   const courses: CatalogItem[] = [
     {
       title: "Category 1: Core Tech & Design Courses",
@@ -294,8 +309,8 @@ Thank you.
           />
 
           <div className="catalog-grid">
-            {courses.map((item) => (
-              <Card key={item.title} variant="catalog">
+            {/* {courses.map((item) => (
+              <Card key={item.title} variant="catalog" >
                 <h3>{item.title}</h3>
                 <p>
                   <FaRupeeSign size={"25px"} className="icon" /> {item.totalFee}
@@ -330,11 +345,52 @@ Thank you.
                   Enroll Now
                 </Button>
                 </a>
+              </Card> */}
+              {courses.map((item) => (
+                 <a
+                    key={item.title}
+                    href={getCourseLink(item.title)}
+                    className="catalog-card-link"
+                    style={{ textDecoration: "none" }}
+                  >
+              <Card key={item.title} variant="catalog">
+                <h3>{item.title}</h3>
+                <p>
+                  <FaRupeeSign size={25} className="icon" /> {item.totalFee}
+                </p>
+                <p>
+                  <CheckCircle className="icon" /> {item.enrollFee}
+                </p>
+                {item.duration && (
+                  <p>
+                    <Clock className="icon" /> Duration: {item.duration}
+                  </p>
+                )}
+                <p>
+                  <TrendingUp className="icon" /> {item.installments}
+                </p>
+
+                {item.includes && item.includes.length > 0 && (
+                  <a href={getCourseLink(item.title)} className="view-courses-btn">
+                    <Button variant="secondary">View Courses</Button>
+                  </a>
+                )}
+
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSehIqCJm6ITkjUJcu9djYG4H60Uku61Z4Wlg_naCjTLUTjqlQ/viewform?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="secondary">Enroll Now</Button>
+                </a>
               </Card>
+              </a>
             ))}
+
+
           </div>
 
-          {modalOpen && selectedCourse && (
+          {/* {modalOpen && selectedCourse && (
             <div className="modal-overlay" onClick={closeModal}>
               <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <h3>{selectedCourse.title} - Courses Included</h3>
@@ -348,7 +404,7 @@ Thank you.
                 </Button>
               </div>
             </div>
-          )}
+          )} */}
         </Container>
       </section>
 
@@ -426,7 +482,6 @@ Thank you.
   </div>
 </section> */}
  <section className="final-cta">
-      {/* Decorative shapes */}
       <div className="cta-shape cta-shape-top" />
       <div className="cta-shape cta-shape-bottom" />
 

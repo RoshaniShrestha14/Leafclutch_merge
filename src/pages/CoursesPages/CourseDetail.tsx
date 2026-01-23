@@ -7,6 +7,7 @@ import CourseBenefits from "../../components/TrainingInternship/CourseBenefits";
 import CourseTechnologies from "../../components/TrainingInternship/CourseTechnologies";
 import CourseIncludedList from "../../components/TrainingInternship/CourseIncludedList";
 import "../../components/TrainingInternship/Courses.css";
+import CourseEnrollCTA from "../../components/TrainingInternship/CourseEnrollCTA";
 
 const CourseDetail = () => {
   const { slug } = useParams();
@@ -27,6 +28,7 @@ const CourseDetail = () => {
       {course.technologies && (
         <CourseTechnologies technologies={course.technologies} />
       )}
+      <CourseEnrollCTA />
       </div>
     </div>
   );
