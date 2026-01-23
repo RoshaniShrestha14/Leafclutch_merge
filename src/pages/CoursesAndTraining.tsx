@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./CoursesAndTraining.css";
 import {
   ArrowRight,
@@ -14,7 +14,7 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import Button from "../components/ui/buttons";
 import Badge from "../components/ui/Badge";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Container from "../components/ui/Container";
 import IconBox from "../components/ui/IconBox";
 import SectionHeader from "../components/ui/SectionHeader";
@@ -32,18 +32,18 @@ type CatalogItem = {
 };
 
 const CoursesAndTraining: React.FC = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedCourse, setSelectedCourse] = useState<CatalogItem | null>(null);
+  // const [modalOpen, setModalOpen] = useState(false);
+  // const [selectedCourse, setSelectedCourse] = useState<CatalogItem | null>(null);
 
-  const openModal = (course: CatalogItem) => {
-    setSelectedCourse(course);
-    setModalOpen(true);
-  };
+  // const openModal = (course: CatalogItem) => {
+  //   setSelectedCourse(course);
+  //   setModalOpen(true);
+  // };
 
-  const closeModal = () => {
-    setSelectedCourse(null);
-    setModalOpen(false);
-  };
+  // const closeModal = () => {
+  //   setSelectedCourse(null);
+  //   setModalOpen(false);
+  // };
 
   const getCourseLink = (title: string) => {
   switch (title) {
